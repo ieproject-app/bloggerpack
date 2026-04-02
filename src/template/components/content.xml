@@ -260,21 +260,6 @@
           </article>
         </b:includable>
 
-        <b:includable id='comments' var='post'>
-          <div class='comments'>
-            <h3 class='comments__title'>
-              <b:if cond='data:post.commentNumber == 1'>
-                1 <data:messages.comment/>
-              <b:else/>
-                <data:post.commentNumber/> <data:messages.comments/>
-              </b:if>
-            </h3>
-            <div class='comments__iframe'>
-              <b:include data='post' name='addComments'/>
-            </div>
-          </div>
-        </b:includable>
-
         <b:includable id='pager'>
           <b:if cond='data:newerPageUrl or data:olderPageUrl'>
             <nav aria-label='Pagination' class='pagination'>
