@@ -32,4 +32,5 @@ Thumbs.db
 /.changelog
 /lerna-debug.log
 **/node_modules
+/preview.html
 !/packages/bloggerpack/test/plugin/**/node_modules
