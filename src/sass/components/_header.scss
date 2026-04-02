@@ -12,8 +12,9 @@
 .header-inner {
   align-items: center;
   display: flex;
-  gap: var(--space-6);
-  min-height: 60px;
+  gap: var(--space-4);
+  min-height: 64px;
+  position: relative;
 }
 
 .site-logo {
@@ -44,17 +45,26 @@
 
   @media (max-width: 767px) {
     background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
     border-top: 1px solid var(--color-border);
-    display: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
     left: 0;
-    padding: var(--space-4) 0;
+    opacity: 0;
+    pointer-events: none;
     position: absolute;
     right: 0;
-    top: 60px;
+    top: 64px;
+    transform: translateY(-6px);
+    transition: opacity var(--transition-fast), transform var(--transition-fast), visibility 0s var(--transition-fast);
+    visibility: hidden;
     z-index: var(--z-overlay);
 
     &.is-open {
-      display: block;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+      transition: opacity var(--transition-fast), transform var(--transition-fast), visibility 0s;
+      visibility: visible;
     }
   }
 }
@@ -65,15 +75,17 @@
   gap: var(--space-1);
 
   @media (max-width: 767px) {
+    align-items: stretch;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0 var(--space-6);
+    gap: var(--space-1);
+    padding: var(--space-3);
   }
 }
 
 .nav-link {
   border-radius: var(--radius-sm);
   color: var(--color-text-muted);
+  display: block;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   padding: var(--space-2) var(--space-3);
@@ -85,12 +97,18 @@
     color: var(--color-text);
     text-decoration: none;
   }
+
+  @media (max-width: 767px) {
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    padding: var(--space-3) var(--space-4);
+  }
 }
 
 .header-actions {
   align-items: center;
   display: flex;
-  gap: var(--space-2);
+  gap: var(--space-1);
   margin-left: auto;
 }
 
@@ -129,12 +147,15 @@
   gap: 5px;
   height: 36px;
   justify-content: center;
-  margin-left: auto;
   padding: var(--space-2);
   width: 36px;
 
   @media (max-width: 767px) {
     display: flex;
+  }
+
+  &:hover {
+    background-color: var(--color-bg-secondary);
   }
 
   &__bar {

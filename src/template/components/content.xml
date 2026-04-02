@@ -118,7 +118,10 @@
                 </p>
               </b:if>
               <div class='featured-post__meta'>
-                <span class='post-meta__author'><data:post.author.name/></span>
+                <span class='post-meta__author'>
+                  <svg aria-hidden='true' fill='none' height='13' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='13' xmlns='http://www.w3.org/2000/svg'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/><circle cx='12' cy='7' r='4'/></svg>
+                  <data:post.author.name/>
+                </span>
                 <time class='post-meta__date' expr:datetime='data:post.date.iso8601'>
                   <data:post.date/>
                 </time>
@@ -173,6 +176,7 @@
 
               <div class='post-card__meta'>
                 <span class='post-meta__author'>
+                  <svg aria-hidden='true' fill='none' height='12' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/><circle cx='12' cy='7' r='4'/></svg>
                   <data:post.author.name/>
                 </span>
                 <time class='post-meta__date' expr:datetime='data:post.date.iso8601'>
@@ -205,6 +209,7 @@
 
               <div class='post-page__meta'>
                 <span class='post-meta__author'>
+                  <svg aria-hidden='true' fill='none' height='13' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='13' xmlns='http://www.w3.org/2000/svg'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/><circle cx='12' cy='7' r='4'/></svg>
                   <data:post.author.name/>
                 </span>
                 <time class='post-meta__date' expr:datetime='data:post.date.iso8601'>

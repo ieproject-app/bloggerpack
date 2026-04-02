@@ -27,6 +27,12 @@
 }
 
 .widget-profile {
+  &__card {
+    align-items: flex-start;
+    display: flex;
+    gap: var(--space-4);
+  }
+
   &__avatar {
     flex-shrink: 0;
 
@@ -36,6 +42,10 @@
       object-fit: cover;
       width: 64px;
     }
+  }
+
+  &__info {
+    min-width: 0;
   }
 
   &__name {

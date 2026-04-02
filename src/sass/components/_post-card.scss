@@ -102,13 +102,21 @@
 
 .post-meta {
   &__author {
+    align-items: center;
+    display: inline-flex;
     font-weight: var(--font-weight-medium);
+    gap: var(--space-1);
+
+    svg {
+      color: var(--color-text-muted);
+      flex-shrink: 0;
+    }
   }
 
   &__date {
     &::before {
-      content: '·';
-      margin-right: var(--space-3);
+      content: '\B7';
+      margin-right: var(--space-2);
     }
   }
 }
