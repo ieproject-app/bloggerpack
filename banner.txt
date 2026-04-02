@@ -1,0 +1,6 @@
+/*!
+ * <%= data.theme.name %> v<%= data.theme.version %>
+ * <%= data.theme.description %>
+ * Author: <%= data.theme.author %> (<%= data.theme.authorUrl %>)
+ * License: <%= data.theme.license %>
+ */

@@ -155,8 +155,7 @@ sassRegistry.prototype.init = function(gulpInst) {
         importer: [
           require('node-sass-package-importer')(),
           require('node-sass-glob-importer')()
-        ],
-        fiber: require('fibers')
+        ]
       }).on('error', sass.logError))
       .pipe(postcss([
         autoprefixer({

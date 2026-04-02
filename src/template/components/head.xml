@@ -1,0 +1,70 @@
+<bp:template>
+  {# === SEO: Description === #}
+  <b:if cond='data:view.isPost or data:view.isPage'>
+    <meta expr:content='data:view.description' name='description'/>
+  <b:else/>
+    <meta expr:content='data:blog.metaDescription' name='description'/>
+  </b:if>
+
+  {# === Canonical URL === #}
+  <b:if cond='data:view.isPost or data:view.isPage'>
+    <link expr:href='data:view.url' rel='canonical'/>
+  <b:else/>
+    <link expr:href='data:blog.canonicalUrl' rel='canonical'/>
+  </b:if>
+
+  {# === Open Graph === #}
+  <meta expr:content='data:blog.title' property='og:site_name'/>
+  <b:if cond='data:view.isPost or data:view.isPage'>
+    <meta content='article' property='og:type'/>
+    <meta expr:content='data:view.title' property='og:title'/>
+    <meta expr:content='data:view.description' property='og:description'/>
+    <meta expr:content='data:view.url' property='og:url'/>
+    <b:if cond='data:featuredImage'>
+      <meta expr:content='data:featuredImage' property='og:image'/>
+    <b:else/>
+      <meta content='{{ data.meta.ogImageFallback }}' property='og:image'/>
+    </b:if>
+  <b:else/>
+    <meta content='website' property='og:type'/>
+    <meta expr:content='data:blog.title' property='og:title'/>
+    <meta expr:content='data:blog.homepageUrl' property='og:url'/>
+    <meta content='{{ data.meta.ogImageFallback }}' property='og:image'/>
+  </b:if>
+
+  {# === Twitter Card === #}
+  <meta content='summary_large_image' name='twitter:card'/>
+  <meta expr:content='data:view.title' name='twitter:title'/>
+  <meta expr:content='data:view.description' name='twitter:description'/>
+
+  {# === Theme Color === #}
+  <meta content='{{ data.meta.themeColor }}' name='theme-color'/>
+
+  {# === Google Fonts === #}
+  <link href='https://fonts.googleapis.com' rel='preconnect'/>
+  <link crossorigin='' href='https://fonts.gstatic.com' rel='preconnect'/>
+  <link href='{{ data.typography.googleFontsUrl }}' rel='stylesheet'/>
+
+  {# === JSON-LD Structured Data === #}
+  <b:if cond='data:view.isPost'>
+    <script type='application/ld+json'>
+    //<![CDATA[
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "<data:view.url/>"
+      },
+      "headline": "<data:view.title/>",
+      "url": "<data:view.url/>",
+      "description": "<data:view.description/>",
+      "publisher": {
+        "@type": "Organization",
+        "name": "<data:blog.title/>"
+      }
+    }
+    //]]>
+    </script>
+  </b:if>
+</bp:template>

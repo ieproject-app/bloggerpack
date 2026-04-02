@@ -1,0 +1,80 @@
+<bp:template>
+  <aside class='sidebar' id='sidebar'>
+
+    <b:section class='sidebar-section' id='sidebar-section' name='Sidebar' showaddelement='yes'>
+
+      <b:widget id='Profile1' type='Profile' visible='true'>
+        <b:includable id='main'>
+          <div class='widget widget--profile'>
+            <b:if cond='data:photo.url'>
+              <div class='widget-profile__avatar'>
+                <img expr:alt='data:authorName' expr:src='data:photo.url' height='80' loading='lazy' width='80'/>
+              </div>
+            </b:if>
+            <div class='widget-profile__info'>
+              <h3 class='widget-profile__name'>
+                <data:authorName/>
+              </h3>
+              <b:if cond='data:aboutMe'>
+                <p class='widget-profile__bio'>
+                  <data:aboutMe/>
+                </p>
+              </b:if>
+            </div>
+          </div>
+        </b:includable>
+      </b:widget>
+
+      <b:widget id='PopularPosts1' type='PopularPosts' visible='true'>
+        <b:includable id='main'>
+          <b:if cond='data:title'>
+            <h3 class='widget__title'>
+              <data:title/>
+            </h3>
+          </b:if>
+          <div class='widget widget--popular-posts'>
+            <b:loop values='data:posts' var='post'>
+              <div class='popular-post'>
+                <b:if cond='data:post.thumbnail'>
+                  <a class='popular-post__thumb' expr:href='data:post.url'>
+                    <img decoding='async' expr:alt='data:post.title' expr:src='data:post.thumbnail' height='60' loading='lazy' width='60'/>
+                  </a>
+                </b:if>
+                <div class='popular-post__info'>
+                  <a class='popular-post__title' expr:href='data:post.url'>
+                    <data:post.title/>
+                  </a>
+                  <time class='popular-post__date' expr:datetime='data:post.date.iso8601'>
+                    <data:post.date/>
+                  </time>
+                </div>
+              </div>
+            </b:loop>
+          </div>
+        </b:includable>
+      </b:widget>
+
+      <b:widget id='Label1' type='Label' visible='true'>
+        <b:includable id='main'>
+          <b:if cond='data:title'>
+            <h3 class='widget__title'>
+              <data:title/>
+            </h3>
+          </b:if>
+          <div class='widget widget--labels'>
+            <b:loop values='data:labels' var='label'>
+              <a class='label-tag' expr:href='data:label.url'>
+                <data:label.name/>
+                <span class='label-tag__count'>
+                  <data:label.count/>
+                </span>
+              </a>
+            </b:loop>
+          </div>
+        </b:includable>
+      </b:widget>
+
+    </b:section>
+
+  </aside>
+</bp:template>

@@ -1,0 +1,59 @@
+/*
+<Variable name="color.primary"
+    description="Warna Utama"
+    type="color"
+    default="#0f62fe"
+    value="#0f62fe"/>
+<Variable name="color.primary.hover"
+    description="Warna Utama (Hover)"
+    type="color"
+    default="#0043ce"
+    value="#0043ce"/>
+<Variable name="color.accent"
+    description="Warna Aksen"
+    type="color"
+    default="#42be65"
+    value="#42be65"/>
+<Variable name="color.bg"
+    description="Warna Background"
+    type="color"
+    default="#ffffff"
+    value="#ffffff"/>
+<Variable name="color.bg.secondary"
+    description="Warna Background Sekunder"
+    type="color"
+    default="#f4f4f4"
+    value="#f4f4f4"/>
+<Variable name="color.surface"
+    description="Warna Surface (Card)"
+    type="color"
+    default="#ffffff"
+    value="#ffffff"/>
+<Variable name="color.border"
+    description="Warna Border"
+    type="color"
+    default="#e0e0e0"
+    value="#e0e0e0"/>
+<Variable name="color.text"
+    description="Warna Teks Utama"
+    type="color"
+    default="#161616"
+    value="#161616"/>
+<Variable name="color.text.muted"
+    description="Warna Teks Sekunder"
+    type="color"
+    default="#6f6f6f"
+    value="#6f6f6f"/>
+*/
+
+:root {
+  --color-primary: $(color.primary);
+  --color-primary-hover: $(color.primary.hover);
+  --color-accent: $(color.accent);
+  --color-bg: $(color.bg);
+  --color-bg-secondary: $(color.bg.secondary);
+  --color-surface: $(color.surface);
+  --color-border: $(color.border);
+  --color-text: $(color.text);
+  --color-text-muted: $(color.text.muted);
+}

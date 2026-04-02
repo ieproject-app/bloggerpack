@@ -1,0 +1,7 @@
+/*!
+ * Snip-Theme v1.0.0
+ * A minimal tech blogger template built with Bloggerpack.
+ * Author: Your Name (https://yourwebsite.com)
+ * License: Free
+ */
+!function(e){"function"==typeof define&&define.amd?define(e):e()}((function(){"use strict";var e="snip-theme",t=document.documentElement,n=document.getElementById("themeToggle");function i(n){t.setAttribute("data-theme",n),localStorage.setItem(e,n)}n&&n.addEventListener("click",(function(){i("dark"===t.getAttribute("data-theme")?"light":"dark")})),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",(function(t){localStorage.getItem(e)||i(t.matches?"dark":"light")}));var a=document.getElementById("backToTop");a&&(window.addEventListener("scroll",(function(){window.scrollY>400?a.classList.add("is-visible"):a.classList.remove("is-visible")}),{passive:!0}),a.addEventListener("click",(function(){window.scrollTo({top:0,behavior:"smooth"})})));var o=document.getElementById("navToggle"),d=document.getElementById("siteNav");o&&d&&(o.addEventListener("click",(function(){var e="true"===o.getAttribute("aria-expanded");o.setAttribute("aria-expanded",String(!e)),d.classList.toggle("is-open",!e)})),document.addEventListener("click",(function(e){o.contains(e.target)||d.contains(e.target)||(o.setAttribute("aria-expanded","false"),d.classList.remove("is-open"))})))}));

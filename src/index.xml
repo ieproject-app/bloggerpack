@@ -1,0 +1,75 @@
+<bp:template>
+  {% extends "./base.xml" %}
+
+  {% block css %}
+    {# Main CSS (Sass) #}
+    {% asset %}
+      <b:if cond='!data:view.isLayoutMode'>
+      <style>
+      {% asset "./sass/dist/style.css" %}
+      </style>
+      </b:if>
+    {% endasset %}
+
+    {# Main CSS (Skin) #}
+    {% asset %}
+      <b:if cond='!data:view.isLayoutMode'>
+      <b:skin>
+      <![CDATA[
+      {% asset "./skin/dist/style.css" %}
+      ]]>
+      </b:skin>
+      </b:if>
+    {% endasset %}
+
+    {# Layout Mode CSS #}
+    {% asset %}
+      <b:if cond='data:view.isLayoutMode'>
+      <b:template-skin>
+      <![CDATA[
+      body#layout { font-family: sans-serif; padding: 1rem; }
+      ]]>
+      </b:template-skin>
+      </b:if>
+    {% endasset %}
+  {% endblock %}
+
+  {% block head %}
+    {% template "./template/components/head.xml" %}
+  {% endblock %}
+
+  {% block body %}
+    <b:if cond='!data:view.isError'>
+      {% template "./template/components/header.xml" %}
+
+      <div class='site-content'>
+        <div class='container'>
+          <div class='blog-layout'>
+            {% template "./template/components/content.xml" %}
+            {% template "./template/components/sidebar.xml" %}
+          </div>
+        </div>
+      </div>
+
+      {% template "./template/components/footer.xml" %}
+
+      <button aria-label='Back to top' class='back-to-top' id='backToTop' type='button'>
+        <svg aria-hidden='true' fill='none' height='20' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><polyline points='18 15 12 9 6 15'/></svg>
+      </button>
+    </b:if>
+
+    <b:if cond='data:view.isError'>
+      {% template "./template/components/404.xml" %}
+    </b:if>
+  {% endblock %}
+
+  {% block js %}
+    {% asset %}
+      <script>
+      //<![CDATA[
+      {% asset "./js/dist/script.js" %}
+      //]]>
+      </script>
+    {% endasset %}
+  {% endblock %}
+</bp:template>

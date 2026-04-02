@@ -1,0 +1,16 @@
+<bp:template>
+  <div class='error-page'>
+    <div class='container'>
+      <div class='error-page__inner'>
+        <p class='error-page__code'>404</p>
+        <h1 class='error-page__title'>Page Not Found</h1>
+        <p class='error-page__desc'>
+          The page you&apos;re looking for doesn&apos;t exist or has been moved.
+        </p>
+        <a class='btn btn--primary' expr:href='data:blog.homepageUrl'>
+          Back to Home
+        </a>
+      </div>
+    </div>
+  </div>
+</bp:template>

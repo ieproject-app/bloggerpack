@@ -1,0 +1,33 @@
+<bp:template>
+  <footer class='site-footer'>
+    <div class='container'>
+      <div class='footer-inner'>
+
+        <div class='footer-brand'>
+          <a class='footer-logo' expr:href='data:blog.homepageUrl'>
+            <data:blog.title/>
+          </a>
+          <p class='footer-desc'>A minimal tech blog built for clarity.</p>
+        </div>
+
+        <nav aria-label='Footer navigation' class='footer-nav'>
+          <ul class='footer-nav__list'>
+            <li><a href='/'>Home</a></li>
+            <li><a href='/p/about.html'>About</a></li>
+            <li><a expr:href='data:blog.searchUrl'>Search</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class='footer-bottom'>
+        <p class='footer-copyright'>
+          &#169;
+          <b:eval expr='data:blog.title'/> &#183; Built with
+          <a href='https://github.com/bloggerpack/bloggerpack' rel='noopener noreferrer' target='_blank'>Bloggerpack</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+</bp:template>

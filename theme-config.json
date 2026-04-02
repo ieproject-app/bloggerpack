@@ -1,0 +1,56 @@
+{
+  "theme": {
+    "name": "Snip-Theme",
+    "version": "1.0.0",
+    "description": "A minimal tech blogger template built with Bloggerpack.",
+    "author": "Your Name",
+    "authorUrl": "https://yourwebsite.com",
+    "license": "Free",
+    "demoUrl": "https://snip-theme.blogspot.com",
+    "downloadUrl": ""
+  },
+  "color": {
+    "primary": "#0f62fe",
+    "primaryHover": "#0043ce",
+    "accent": "#42be65",
+    "bg": "#ffffff",
+    "bgSecondary": "#f4f4f4",
+    "surface": "#ffffff",
+    "border": "#e0e0e0",
+    "text": "#161616",
+    "textMuted": "#6f6f6f",
+    "textInverse": "#ffffff"
+  },
+  "colorDark": {
+    "bg": "#161616",
+    "bgSecondary": "#262626",
+    "surface": "#1c1c1c",
+    "border": "#393939",
+    "text": "#f4f4f4",
+    "textMuted": "#a8a8a8"
+  },
+  "typography": {
+    "fontSans": "\"IBM Plex Sans\", system-ui, sans-serif",
+    "fontMono": "\"IBM Plex Mono\", \"Fira Code\", monospace",
+    "fontSerif": "\"IBM Plex Serif\", Georgia, serif",
+    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+  },
+  "layout": {
+    "containerMax": "1200px",
+    "sidebarWidth": "300px",
+    "gridGap": "1.5rem"
+  },
+  "features": {
+    "darkMode": true,
+    "responsiveImages": true,
+    "lazyLoad": true,
+    "searchWidget": true,
+    "relatedPosts": false,
+    "progressBar": false,
+    "backToTop": true
+  },
+  "meta": {
+    "themeColor": "#0f62fe",
+    "ogImageFallback": "https://yourwebsite.com/snip-theme-og.png"
+  }
+}

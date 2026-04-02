@@ -1,0 +1,28 @@
+.back-to-top {
+  align-items: center;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  bottom: var(--space-6);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-text-inverse);
+  display: flex;
+  height: 44px;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: var(--space-6);
+  transition: opacity var(--transition-normal), background-color var(--transition-fast), transform var(--transition-fast);
+  width: 44px;
+  z-index: var(--z-sticky);
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+  }
+
+  &.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
